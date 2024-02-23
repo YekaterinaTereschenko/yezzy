@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/dist/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+        <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+        <title>YEEZY</title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3>Кошик</h3>
+            <ul class="shop-card">
+                <!--  -->
+            </ul>
+            <div class="sum-block">
+                <h3>Загальна сума: </h3>
+                <h3 class="totalSum"></h3>
+            </div>
+            <form class="delivery-form" id="telegramForm" action="">
+                <input type="text" id="nameInput" placeholder="Ваше ім`я" required>
+                <input type="email" id="emailInput" placeholder="Ваш Email" required>
+                <input type="tel" id="phoneInput" placeholder="Ваш номер телефону" required>
+                <input type="text" id="cityInput" placeholder="Місто" required>
+                <ul id="citySuggestions"></ul>
+                <input type="text" id="warehouseInput" placeholder="Виберіть пункт отримання" required>
+                <ul id="warehouseSuggestions"></ul>
+                <input type="text" id="commentInput" placeholder="Коментар до замовлення" required>
+                <button type="button" onclick="submitForm()">Відправити заявку</button>
+            </form>
+        </div>
+    </div>
+    <div id="cookie-consent">
+        <p>Ми використовуємо файли cookie, щоб забезпечити найкращий досвід роботи на нашому сайті. Продовжуючи перегляд сайту, ви погоджуєтесь з використанням нами файлів cookie та <a href="./politic.html">політикою конфіденційності</a>.</p>
+        <button id="consent-btn">Згоден</button>
+    </div>
+    <div class="container">
+        <button class="shop-bag-btn" href="./card.html">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+        </button>
+        <header class="header">
+            <a class="header-logo" href="./index.html">
+                <img src="./images/logo.png" alt="">
+            </a>
+            <span class="mob-flex burger material-symbols-outlined" onclick="toggleNav()">
+                menu
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="./catalog.html">Каталог</a></li>
+                    <li><a href="./sizes.html">Розмірна сітка</a></li>
+                    <li><a href="./payment.html">Оплата та повернення</a></li>
+                    <li><a href="./qa.html">Питання та відповіді</a></li>
+                    <li><a href="./contacts.html">Контакти</a></li>
+                    <select name="" id="langs2" onchange="changeLanguage()">
+                        <option value="UA">UA</option>
+                        <option value="PL">PL</option>
+                        <option value="EN">EN</option>
+                    </select>
+                </ul>
+            </nav>
+        </header> 
+        <nav id="main-nav">
+            <ul>
+                <li><a href="./catalog.html">Каталог</a></li>
+                <li><a href="./sizes.html">Розмірна сітка</a></li>
+                <li><a href="./payment.html">Оплата та повернення</a></li>
+                <li><a href="./qa.html">Питання та відповіді</a></li>
+                <li><a href="./contacts.html">Контакти</a></li>
+                <select name="" id="langs" onchange="changeLanguage2()">
+                    <option value="UA">UA</option>
+                    <option value="PL">PL</option>
+                    <option value="EN">EN</option>
+                </select>
+            </ul>
+        </nav> 
+        <section class="qa">
+            <div class="qa-block">
+                <h3>чи оригінальна у вас продукція?</h3>
+                <p>так! ми продаємо виключно оригінал!</p>
+            </div>
+            <div class="qa-block">
+                <h3>ЧОМУ ЦІНА ЗМІНЮЄТЬСЯ?</h3>
+                <p>Ціна на сайті змінюється паралельно з ринком і може зростати або знижуватися в залежності від ряду
+                    факторів, зокрема від пропозиції на конкретний розмір протягом певного періоду та обмінного курсу
+                    валюти. Замовлення фіксується за тією ціною, яка була вказана на сайті в момент оформлення
+                    замовлення, незалежно від подальших змін цін.
+                </p>
+            </div>
+            <div class="qa-block">
+                <h3>Чи існує ризик отримати фейк при покупці?</h3>
+                <p>Замовляючи у нас, ви мінімізуєте ризик отримання неоригінального товару. Ми придбаємо кросівки на
+                    етапі їхнього релізу від "Adidas" і тільки після цього розглядаємо можливість придбання на торгових
+                    майданчиках. Навіть у такому випадку, щоб розмістити оголошення про продаж, ми проходимо детальну
+                    аутентифікацію взуття. Крім того, при прибутті товару на наш склад ми також ретельно перевіряємо
+                    його на автентичність. Ваша безпека та задоволення від покупки є нашим пріоритетом.</p>
+            </div>
+            <div class="qa-block">
+                <h3>ЯК ВІДБУВАЄТЬСЯ ОБМІН?</h3>
+                <p>Якщо вам не підходить колір або розмір, ви можете здійснити обмін. Важливо звернути увагу, щоб
+                    пройшло не більше 14 днів з моменту покупки, товар не використовувався, був збережений у своєму
+                    первісному вигляді, має всі внутрішні та навісні бирки, оригінальну коробку та чек про покупку (якщо
+                    є). Кросівки, які були придбані на замовлення, не підлягають обміну та поверненню.</p>
+            </div>
+            <div class="qa-block">
+                <h3>Як проходить процес повернення?</h3>
+                <p>Якщо ви бажаєте повернути товар, важливо, щоб пройшло не більше 14 днів з моменту покупки, товар не
+                    використовувався і зберіг його товарний вигляд, внутрішні та навісні бирки, оригінальну коробку та
+                    чек про покупку (якщо є). Кросівки, придбані на замовлення, не підлягають обміну та поверненню. Для
+                    оформлення повернення зв'яжіться з нами будь-яким зручним способом.</p>
+            </div>
+            <div class="qa-block">
+                <h3>ЯК ВІДБУВАЄТЬСЯ ОБМІН?</h3>
+                <p>Якщо вам не підходить колір або розмір, ви можете здійснити обмін. Важливо звернути увагу, щоб
+                    пройшло не більше 14 днів з моменту покупки, товар не використовувався, був збережений у своєму
+                    первісному вигляді, має всі внутрішні та навісні бирки, оригінальну коробку та чек про покупку (якщо
+                    є). Кросівки, які були придбані на замовлення, не підлягають обміну та поверненню.</p>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+<script>
+    localStorage.setItem('lang', 'UA')
+</script>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dist/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <title>YEEZY</title>
+    <style>
+        /* Ваши стили слайдов */
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3>Кошик</h3>
+            <ul class="shop-card">
+                <!--  -->
+            </ul>
+            <div class="sum-block">
+                <h3>Загальна сума: </h3>
+                <h3 class="totalSum"></h3>
+            </div>
+            <form class="delivery-form" id="telegramForm" action="">
+                <input type="text" id="nameInput" placeholder="Ваше ім`я" required>
+                <input type="email" id="emailInput" placeholder="Ваш Email" required>
+                <input type="tel" id="phoneInput" placeholder="Ваш номер телефону" required>
+                <input type="text" id="cityInput" placeholder="Місто" required>
+                <ul id="citySuggestions"></ul>
+                <input type="text" id="warehouseInput" placeholder="Виберіть пункт отримання" required>
+                <ul id="warehouseSuggestions"></ul>
+                <input type="text" id="commentInput" placeholder="Коментар до замовлення" required>
+                <button onclick="submitForm()">Замовити</button>
+            </form>
+        </div>
+    </div>
+    <div id="cookie-consent">
+        <p>Ми використовуємо файли cookie, щоб забезпечити найкращий досвід роботи на нашому сайті. Продовжуючи перегляд
+            сайту, ви погоджуєтесь з використанням нами файлів cookie та <a href="./politic.html">політикою
+                конфіденційності</a>.</p>
+        <button id="consent-btn">Згоден</button>
+    </div>
+    <div class="container">
+        <button class="shop-bag-btn" href="./card.html">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+        </button>
+        <header class="header">
+            <a class="header-logo" href="./index.html">
+                <img src="./images/logo.png" alt="">
+            </a>
+            <span class="mob-flex burger material-symbols-outlined" onclick="toggleNav()">
+                menu
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="./catalog.html">Каталог</a></li>
+                    <li><a href="./sizes.html">Розмірна сітка</a></li>
+                    <li><a href="./payment.html">Оплата та повернення</a></li>
+                    <li><a href="./qa.html">Питання та відповіді</a></li>
+                    <li><a href="./contacts.html">Контакти</a></li>
+                    <select name="" id="langs2" onchange="changeLanguage()">
+                        <option value="UA">UA</option>
+                        <option value="PL">PL</option>
+                        <option value="EN">EN</option>
+                    </select>
+                </ul>
+            </nav>
+        </header>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="./catalog.html">Каталог</a></li>
+                <li><a href="./sizes.html">Розмірна сітка</a></li>
+                <li><a href="./payment.html">Оплата та повернення</a></li>
+                <li><a href="./qa.html">Питання та відповіді</a></li>
+                <li><a href="./contacts.html">Контакти</a></li>
+                <select name="" id="langs" onchange="changeLanguage2()">
+                    <option value="UA">UA</option>
+                    <option value="PL">PL</option>
+                    <option value="EN">EN</option>
+                </select>
+            </ul>
+        </nav>
+        <section class="title">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/profit.png" alt="">
+                        <h3>Вигідно</h3>
+                        <p>Ми 6 років є постачальниками
+                            оригінальних Yeezy для баєрів та ресейл-платформ.
+                            Наша мета - чесна низька ціна та бездоганне
+                            обслуговування.
+                            Найбільший сток в Україні та найкращя ціна!</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/assortment.png" alt="">
+                        <h3>Асортимент</h3>
+                        <p>Наявність найбільш популярних моделей та кольорів. Широкий вибір розмірів для всіх наших
+                            клієнтів.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/credit-card.png" alt="">
+                        <h3>Оплата при отриманні</h3>
+                        <p>Оплата при отриманні, без потреби в передплаті.</p>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script>
+                const swiper = new Swiper('.swiper-container', {
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            </script>
+            <div class=" mob-hide title-content">
+                <div class="title-content-card">
+                    <div class="">
+
+                        <img src="./images/profit.png" alt="">
+                    </div>
+                    <h3>Вигідно</h3>
+                    <p>Ми 6 років є постачальниками
+                        оригінальних Yeezy для баєрів та ресейл-платформ.
+                        Наша мета - чесна низька ціна та бездоганне
+                        обслуговування.
+                        Найбільший сток в Україні та найкращя ціна!</p>
+                </div>
+                <div class="title-content-card">
+                    <div class="">
+
+                        <img src="./images/assortment.png" alt="">
+                    </div>
+                    <h3>Асортимент</h3>
+                    <p>Наявність найбільш популярних моделей та кольорів. Широкий вибір розмірів для всіх наших
+                        клієнтів.</p>
+                </div>
+                <div class="title-content-card">
+                    <div class="">
+
+                        <img src="./images/credit-card.png" alt="">
+                    </div>
+                    <h3>Оплата при отриманні</h3>
+                    <p>Оплата при отриманні, без потреби в передплаті.</p>
+                </div>
+            </div>
+            <div class="title-btn">
+                <a href="./catalog.html">До каталогу YEEZY</a>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+<script>
+</script>
+<script>
+    localStorage.setItem('lang', 'UA')
+</script>
+</html>

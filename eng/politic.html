@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dist/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+        <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+        <title>YEEZY</title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3>Shopping Cart</h3>
+            <ul class="shop-card">
+                <!--  -->
+            </ul>
+            <div class="sum-block">
+                <h3>Total Amount: </h3>
+                <h3 class="totalSum"></h3>
+            </div>
+            <form class="delivery-form" id="telegramForm" action="">
+                <input type="text" id="nameInput" placeholder="Your Name" required>
+                <input type="email" id="emailInput" placeholder="Your Email" required>
+                <input type="tel" id="phoneInput" placeholder="Your Phone Number" required>
+                <input type="text" id="cityInput" placeholder="City" required>
+                <ul id="citySuggestions"></ul>
+                <input type="text" id="warehouseInput" placeholder="Select Pickup Point" required>
+                <ul id="warehouseSuggestions"></ul>
+                <input type="text" id="commentInput" placeholder="Order Comment" required>
+                <button type="button" onclick="submitForm()">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    <div id="cookie-consent">
+        <p>We use cookies to provide the best experience while using our website. By continuing to browse the site, you agree to the use of cookies by us and acknowledge the <a href="./politic.html">privacy policy</a>.</p>
+        <button id="consent-btn">I Agree</button>
+    </div> 
+    <div id="cookie-consent">
+        <p>We use cookies to provide the best experience while using our website. By continuing to browse the site, you agree to the use of cookies by us and acknowledge the <a href="./politic.html">privacy policy</a>.</p>
+        <button id="consent-btn">I Agree</button>
+    </div> 
+    <div class="container">
+        <button class="shop-bag-btn" href="./card.html">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+        </button>
+        <header class="header">
+            <a class="header-logo" href="./index.html">
+                <img src="../images/logo.png" alt="">
+            </a>
+            <span class="mob-flex burger material-symbols-outlined" onclick="toggleNav()">
+                menu
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="./catalog.html">Catalog</a></li>
+                    <li><a href="./sizes.html">Size Chart</a></li>
+                    <li><a href="./payment.html">Payment and Returns</a></li>
+                    <li><a href="./qa.html">Questions and Answers</a></li>
+                    <li><a href="./contacts.html">Contacts</a></li>
+                    <select name="" id="langs2" onchange="changeLanguage()">
+                        <option value="EN">EN</option>
+                        <option value="UA">UA</option>
+                        <option value="PL">PL</option>
+                    </select>
+                </ul>
+            </nav>
+        </header>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="./catalog.html">Catalog</a></li>
+                <li><a href="./sizes.html">Size Chart</a></li>
+                <li><a href="./payment.html">Payment and Returns</a></li>
+                <li><a href="./qa.html">Questions and Answers</a></li>
+                <li><a href="./contacts.html">Contacts</a></li>
+                <select name="" id="langs" onchange="changeLanguage2()">
+                    <option value="EN">EN</option>
+                    <option value="UA">UA</option>
+                    <option value="PL">PL</option>
+                </select>
+            </ul>
+        </nav>
+        <section class="politic">
+            <h3>Privacy Policy</h3>
+            <br>
+            <p>
+                The Privacy Policy concerns the personal data that customers provide to the Company, both in the context
+                of providing various services and other communication, typically in electronic form, as well as in the
+                context
+                of promotions, customer service, and after-sales service. <br> <br>
+
+                The Company reserves the right to change and supplement the existing provisions of the Privacy Policy,
+                and
+                such changes and supplements will take precedence over the existing provisions of the Policy. It should
+                be noted that
+                the services provided may contain links to third-party websites that have their own privacy policies.
+                In such cases, the Company is not responsible for the content of the third party's privacy policy or for
+                compliance with its provisions.
+                By providing their personal data, the Client fully agrees
+                to the processing of their personal data in accordance with the provisions of the current Privacy Policy
+                of the Company. <br> <br>
+
+                Procedure for collecting, storing, and disposing of personal data <br> <br>
+
+                The Company collects personal data only with the consent of the customer and only for the purpose of
+                providing the customer with a service or
+                service that requires the provision of personal data: purchase in an online store, participation in
+                promotions, warranty
+                service and maintenance. Various information security measures are applied (both technical and
+                organizational) to prevent leakage
+                of customer personal data. <br> <br>
+
+                The maximum storage period for customer personal data is 75 years from the date of receipt by the
+                company
+                of private information. Otherwise, the company will store the customer's personal data until the end of
+                its activity. <br> <br>
+
+                Personal data or its parts must be destroyed, anonymized, or blocked to prevent further
+                processing of this information. <br> <br>
+
+                The Company collects personal data of the following categories of customers: <br> <br>
+
+                Technical information: <br> <br>
+
+                access time and IP address; <br> <br>
+
+                Sources of access to the Company's Internet resources; <br> <br>
+
+                Websites visited by the user; <br> <br>
+
+                types of advertising panels; <br> <br>
+
+                other technical information provided by the user's browser; <br> <br>
+
+                Customer's phone number (when calling the numbers indicated on the Company's website). <br> <br>
+
+                During registration on the site, the Company collects the customer's personal data for user
+                authentication /
+                service personalization / order delivery / customer feedback: <br> <br>
+
+                User activity information: <br> <br>
+
+                Information about agreements/contracts between the customer and the company; <br> <br>
+
+                Information about inquiries and orders addressed to the company; <br> <br>
+
+                Purposes of processing customer personal data: <br> <br>
+
+                Sell products and provide other services to customers; <br> <br>
+
+                Take into account the wishes of customers (when developing a new product or service); <br> <br>
+
+                Inform the customer about promotions, discounts, and special offers by email and SMS; <br> <br>
+
+                To provide customers with feedback. <br> <br>
+
+                Do not transfer customer personal data to third parties, except in the following cases: <br> <br>
+
+                obtain explicit consent from the user to provide his personal data to a third party; <br> <br>
+
+                at the request of law enforcement agencies in accordance with applicable law; <br> <br>
+
+                merger or acquisition by the company. <br> <br>
+
+                Use of cookies and tabs <br> <br>
+
+                Cookies allow us to collect the following information about the customer: IP address / operating system
+                / type
+                browser / URL of the referring website. This is necessary to improve the services that the company
+                provides to the customer
+                (remembering the password on the site when closing the browser, traffic analysis, etc.). If you wish,
+                you can at any
+                time prevent tracking your activity by disabling cookies. <br> <br>
+
+                User rights regarding personal data <br> <br>
+
+                All customers can edit their personal data in the User's Cabinet. If the user expresses a desire
+                to stop processing their personal data, they must contact the company.
+            </p>
+        </section>
+    </div>
+</body>
+<script src="../js/script.js"></script>
+<script>
+    localStorage.setItem('lang', 'EN')
+</script>
+
+</html>

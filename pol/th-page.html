@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dist/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+        <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+        <title>YEEZY</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="header-logo" href="./index.html">
+                <img src="../images/logo.png" alt="">
+            </a>
+            <span class="mob-flex burger material-symbols-outlined" onclick="toggleNav()">
+                menu
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="./catalog.html">Katalog</a></li>
+                    <li><a href="./sizes.html">Tabela rozmiarów</a></li>
+                    <li><a href="./payment.html">Płatność i zwroty</a></li>
+                    <li><a href="./qa.html">Pytania i odpowiedzi</a></li>
+                    <li><a href="./contacts.html">Kontakty</a></li>
+                    <select name="" id="langs2" onchange="changeLanguage()">
+                        <option value="PL">PL</option>
+                        <option value="UA">UA</option>
+                        <option value="EN">EN</option>
+                    </select>
+                </ul>
+            </nav>
+        </header>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="./catalog.html">Katalog</a></li>
+                <li><a href="./sizes.html">Tabela rozmiarów</a></li>
+                <li><a href="./payment.html">Płatność i zwroty</a></li>
+                <li><a href="./qa.html">Pytania i odpowiedzi</a></li>
+                <li><a href="./contacts.html">Kontakty</a></li>
+                <select name="" id="langs" onchange="changeLanguage2()">
+                    <option value="PL">PL</option>
+                    <option value="UA">UA</option>
+                    <option value="EN">EN</option>
+                </select>
+            </ul>
+        </nav>
+        <div class="th-page">
+            <span class="material-symbols-outlined">
+                check_circle
+            </span>
+            <h3>Twoje zgłoszenie zostało odebrane! Skontaktujemy się z Tobą wkrótce.</h3>
+            <a href="./index.html">Na stronę główną</a>
+        </div>
+</body>
+<script src="../js/script.js"></script>
+<script>
+    localStorage.setItem('lang', 'PL')
+</script>
+
+</html>

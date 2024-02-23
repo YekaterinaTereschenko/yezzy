@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dist/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+        <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+        <title>YEEZY</title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3>Koszyk</h3>
+            <ul class="shop-card">
+                <!--  -->
+            </ul>
+            <div class="sum-block">
+                <h3>Łączna suma: </h3>
+                <h3 class="totalSum"></h3>
+            </div>
+            <form class="delivery-form" id="telegramForm" action="">
+                <input type="text" id="nameInput" placeholder="Twoje imię" required>
+                <input type="email" id="emailInput" placeholder="Twój adres email" required>
+                <input type="tel" id="phoneInput" placeholder="Twój numer telefonu" required>
+                <input type="text" id="cityInput" placeholder="Miasto" required>
+                <ul id="citySuggestions"></ul>
+                <input type="text" id="warehouseInput" placeholder="Wybierz punkt odbioru" required>
+                <ul id="warehouseSuggestions"></ul>
+                <input type="text" id="commentInput" placeholder="Komentarz do zamówienia" required>
+                <button type="button" onclick="submitForm()">Wyślij zapytanie</button>
+            </form>
+        </div>
+    </div>
+    <div id="cookie-consent">
+        <p>Wykorzystujemy pliki cookie, aby zapewnić najlepsze doświadczenia podczas korzystania z naszej witryny. Kontynuując przeglądanie strony, zgadzasz się na korzystanie z plików cookie przez nas oraz zapoznajesz się z <a href="./politic.html">polityką prywatności</a>.</p>
+        <button id="consent-btn">Zgadzam się</button>
+    </div>
+    <div class="container">
+        <button class="shop-bag-btn" href="./card.html">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+        </button>
+        <header class="header">
+            <a class="header-logo" href="./index.html">
+                <img src="./images/logo.png" alt="">
+            </a>
+            <span class="mob-flex burger material-symbols-outlined" onclick="toggleNav()">
+                menu
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="./catalog.html">Katalog</a></li>
+                    <li><a href="./sizes.html">Tabela rozmiarów</a></li>
+                    <li><a href="./payment.html">Płatności i zwroty</a></li>
+                    <li><a href="./qa.html">Pytania i odpowiedzi</a></li>
+                    <li><a href="./contacts.html">Kontakty</a></li>
+                    <select name="" id="langs2" onchange="changeLanguage()">
+                        <option value="PL">PL</option>
+                        <option value="UA">UA</option>
+                        <option value="EN">EN</option>
+                    </select>
+                </ul>
+            </nav>
+        </header> 
+        <nav id="main-nav">
+            <ul>
+                <li><a href="./catalog.html">Katalog</a></li>
+                <li><a href="./sizes.html">Tabela rozmiarów</a></li>
+                <li><a href="./payment.html">Płatności i zwroty</a></li>
+                <li><a href="./qa.html">Pytania i odpowiedzi</a></li>
+                <li><a href="./contacts.html">Kontakty</a></li>
+                <select name="" id="langs" onchange="changeLanguage2()">
+                    <option value="PL">PL</option>
+                    <option value="UA">UA</option>
+                    <option value="EN">EN</option>
+                </select>
+            </ul>
+        </nav> 
+        <section class="qa">
+            <div class="qa-block">
+                <h3>Czy wasz produkt jest oryginalny?</h3>
+                <p>Tak! Sprzedajemy wyłącznie oryginały!</p>
+            </div>
+            <div class="qa-block">
+                <h3>Dlaczego cena się zmienia?</h3>
+                <p>Cena na stronie zmienia się równolegle z rynkiem i może wzrastać lub maleć w zależności od różnych czynników, w tym popytu na określony rozmiar w określonym okresie oraz kursu wymiany walut. Zamówienie jest ustalane według ceny podanej na stronie w chwili złożenia zamówienia, niezależnie od późniejszych zmian cen.</p>
+            </div>
+            <div class="qa-block">
+                <h3>Czy istnieje ryzyko otrzymania podróbki podczas zakupu?</h3>
+                <p>Zamawiając u nas, minimalizujesz ryzyko otrzymania nieoryginalnego produktu. Zakupujemy buty na etapie ich premiery od "Adidasa", a dopiero potem rozważamy możliwość zakupu na platformach handlowych. Nawet w takich przypadkach, aby umieścić ogłoszenie o sprzedaży, przechodzimy przez szczegółową autentykację obuwia. Dodatkowo, po przybyciu na nasz magazyn, dokładnie je sprawdzamy pod kątem autentyczności. Twoje bezpieczeństwo i zadowolenie z zakupów są naszym priorytetem.</p>
+            </div>
+            <div class="qa-block">
+                <h3>Jak przebiega proces wymiany?</h3>
+                <p>Jeśli kolor lub rozmiar nie odpowiada Ci, możesz wymienić przedmiot. Ważne jest, aby nie minęło więcej niż 14 dni od daty zakupu, produkt nie był używany, był przechowywany w stanie nienaruszonym, posiadał wszystkie etykiety wewnętrzne i wiszące, oryginalne pudełko oraz paragon zakupu (jeśli jest). Buty zamówione na życzenie nie podlegają wymianie ani zwrotowi.</p>
+            </div>
+            <div class="qa-block">
+                <h3>Jak przebiega proces zwrotu?</h3>
+                <p>Jeśli chcesz zwrócić przedmiot, ważne jest, aby nie minęło więcej niż 14 dni od daty zakupu, produkt nie był używany, a Ty zachowałeś go w stanie nienaruszonym, z etykietami wewnętrznymi i wiszącymi, oryginalnym pudełkiem oraz paragonem zakupu (jeśli jest). Buty zakupione na życzenie nie podlegają wymianie ani zwrotowi. Aby zrealizować zwrot, skontaktuj się z nami dowolnym wygodnym dla Ciebie sposobem.</p>
+            </div>
+            <div class="qa-block">
+                <h3>Jak przebiega proces wymiany?</h3>
+                <p>Jeśli kolor lub rozmiar nie odpowiada Ci, możesz wymienić przedmiot. Ważne jest, aby nie minęło więcej niż 14 dni od daty zakupu, produkt nie był używany, był przechowywany w stanie nienaruszonym, posiadał wszystkie etykiety wewnętrzne i wiszące, oryginalne pudełko oraz paragon zakupu (jeśli jest). Buty zamówione na życzenie nie podlegają wymianie ani zwrotowi.</p>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+<script>
+    localStorage.setItem('lang', 'PL')
+</script>
+</html>

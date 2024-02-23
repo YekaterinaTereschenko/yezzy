@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dist/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+        <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+        <title>YEEZY</title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <h3>Koszyk</h3>
+            <ul class="shop-card">
+                <!--  -->
+            </ul>
+            <div class="sum-block">
+                <h3>Łączna suma: </h3>
+                <h3 class="totalSum"></h3>
+            </div>
+            <form class="delivery-form" id="telegramForm" action="">
+                <input type="text" id="nameInput" placeholder="Twoje imię" required>
+                <input type="email" id="emailInput" placeholder="Twój adres e-mail" required>
+                <input type="tel" id="phoneInput" placeholder="Twój numer telefonu" required>
+                <input type="text" id="cityInput" placeholder="Miasto" required>
+                <ul id="citySuggestions"></ul>
+                <input type="text" id="warehouseInput" placeholder="Wybierz punkt odbioru" required>
+                <ul id="warehouseSuggestions"></ul>
+                <input type="text" id="commentInput" placeholder="Komentarz do zamówienia" required>
+                <button type="button" onclick="submitForm()">Wyślij zapytanie</button>
+            </form>
+        </div>
+    </div>
+    <div id="cookie-consent">
+        <p>Wykorzystujemy pliki cookie, aby zapewnić najlepsze doświadczenia podczas korzystania z naszej witryny. Kontynuując przeglądanie strony, zgadzasz się na korzystanie z plików cookie przez nas oraz zapoznajesz się z <a href="./politic.html">polityką prywatności</a>.</p>
+        <button id="consent-btn">Zgadzam się</button>
+    </div>
+    <div class="container">
+        <button class="shop-bag-btn" href="./card.html">
+            <span class="material-symbols-outlined">
+                shopping_bag
+            </span>
+        </button>
+        <header class="header">
+            <a class="header-logo" href="./index.html">
+                <img src="../images/logo.png" alt="">
+            </a>
+            <span class="mob-flex burger material-symbols-outlined" onclick="toggleNav()">
+                menu
+            </span>
+            <nav>
+                <ul>
+                    <li><a href="./catalog.html">Katalog</a></li>
+                    <li><a href="./sizes.html">Tabela rozmiarów</a></li>
+                    <li><a href="./payment.html">Płatność i zwroty</a></li>
+                    <li><a href="./qa.html">Pytania i odpowiedzi</a></li>
+                    <li><a href="./contacts.html">Kontakty</a></li>
+                    <select name="" id="langs2" onchange="changeLanguage()">
+                        <option value="PL">PL</option>
+                        <option value="UA">UA</option>
+                        <option value="EN">EN</option>
+                    </select>
+                </ul>
+            </nav>
+        </header>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="./catalog.html">Katalog</a></li>
+                <li><a href="./sizes.html">Tabela rozmiarów</a></li>
+                <li><a href="./payment.html">Płatność i zwroty</a></li>
+                <li><a href="./qa.html">Pytania i odpowiedzi</a></li>
+                <li><a href="./contacts.html">Kontakty</a></li>
+                <select name="" id="langs" onchange="changeLanguage2()">
+                    <option value="PL">PL</option>
+                    <option value="UA">UA</option>
+                    <option value="EN">EN</option>
+                </select>
+            </ul>
+        </nav>
+        <section class="politic">
+            <h3>Polityka prywatności</h3>
+            <br>
+            <p>
+                Polityka prywatności dotyczy danych osobowych, które klienci przekazują Firmie, zarówno w kontekście
+                świadczenia różnego rodzaju usług i innej komunikacji, zazwyczaj w formie elektronicznej, jak i w
+                kontekście
+                promocji, obsługi klienta i obsługi posprzedażowej. <br> <br>
+
+                Firma zastrzega sobie prawo do zmiany i uzupełnienia obowiązujących postanowień Polityki prywatności, i
+                takie zmiany i uzupełnienia będą miały pierwszeństwo przed obowiązującymi postanowieniami Polityki.
+                Należy zwrócić uwagę, że
+                świadczone usługi mogą zawierać odnośniki do stron trzecich, które posiadają własne polityki
+                prywatności. W takich przypadkach Firma nie ponosi odpowiedzialności za treść polityki prywatności
+                trzeciej strony ani za przestrzeganie jej postanowień. Przesyłając swoje dane osobowe, Klient wyraża
+                pełną zgodę
+                na przetwarzanie swoich danych osobowych zgodnie z postanowieniami aktualnej polityki prywatności Firmy.
+                <br> <br>
+
+                Procedura zbierania, przechowywania i utylizacji danych osobowych <br> <br>
+
+                Firma zbiera dane osobowe wyłącznie za zgodą klienta i wyłącznie w celu świadczenia klientowi usługi lub
+                usługi wymagającej podania danych osobowych: zakup w sklepie internetowym, udział w promocjach,
+                gwarancja
+                obsługi i serwisu. Stosuje różne środki bezpieczeństwa informacji (zarówno techniczne, jak i
+                organizacyjne), aby zapobiec wyciekowi
+                danych osobowych klientów. <br> <br>
+
+                Maksymalny okres przechowywania danych osobowych klientów wynosi 75 lat od daty otrzymania przez firmę
+                prywatnych informacji. W przeciwnym razie firma będzie przechowywać dane osobowe klienta do końca swojej
+                działalności. <br> <br>
+
+                Dane osobowe lub ich części muszą zostać zniszczone, zanonimizowane lub zablokowane, aby uniemożliwić
+                dalsze
+                przetwarzanie tych informacji. <br> <br>
+
+                Firma zbiera dane osobowe następujących kategorii klientów: <br> <br>
+
+                Informacje techniczne: <br> <br>
+
+                czas dostępu i adres IP; <br> <br>
+
+                Źródła dostępu do zasobów internetowych Firmy; <br> <br>
+
+                Strony internetowe odwiedzane przez użytkownika; <br> <br>
+
+                typy paneli reklamowych; <br> <br>
+
+                inne informacje techniczne dostarczane przez przeglądarkę użytkownika; <br> <br>
+
+                Numer telefonu Klienta (w przypadku dzwonienia pod numery wskazane na stronie internetowej Firmy). <br>
+                <br>
+
+                Podczas rejestracji w serwisie Firma zbiera dane osobowe Klienta w celu uwierzytelnienia użytkownika /
+                personalizacji usług / dostawy zamówienia / opinii Klienta: <br> <br>
+
+                Informacje o aktywności użytkownika: <br> <br>
+
+                Informacje o umowach/kontraktach między klientem a firmą; <br> <br>
+
+                Informacje o zapytaniach i zamówieniach kierowanych do firmy; <br> <br>
+
+                Cele przetwarzania danych osobowych klientów: <br> <br>
+
+                Sprzedawać produkty i świadczyć inne usługi dla klientów; <br> <br>
+
+                Wzięcie pod uwagę życzeń klientów (przy opracowywaniu nowego produktu lub usługi); <br> <br>
+
+                Informuj klienta o promocjach, rabatach i ofertach specjalnych przez e-mail i SMS; <br> <br>
+
+                Aby przekazać klientom opinie. <br> <br>
+
+                Nie przekazywać danych osobowych klientów stronom trzecim, z wyjątkiem następujących przypadków: <br>
+                <br>
+
+                uzyskać wyraźną zgodę użytkownika na udostępnienie jego danych osobowych stronie trzeciej; <br> <br>
+
+                na żądanie organów ścigania zgodnie z obowiązującymi przepisami prawa; <br> <br>
+
+                fuzja lub przejęcie firmy. <br> <br>
+
+                Korzystanie z plików cookie i zakładek <br> <br>
+
+                Pliki cookie pozwalają nam zbierać następujące informacje o kliencie: adres IP / system operacyjny / typ
+                przeglądarki / adres URL strony odsyłającej. Jest to niezbędne w celu ulepszenia usług, które firma
+                świadczy na rzecz klienta
+                (zapamiętanie hasła na stronie podczas zamykania przeglądarki, analiza ruchu itp.). Jeśli chcesz, możesz
+                w dowolnym
+                momencie uniemożliwić śledzenie swojej aktywności, wyłączając pliki cookie. <br> <br>
+
+                Prawa użytkownika dotyczące danych osobowych <br> <br>
+
+                Wszyscy klienci mogą edytować swoje dane osobowe w Gabinecie Użytkownika. Jeśli użytkownik wyrazi chęć
+                zaprzestania przetwarzania swoich danych osobowych, musi się z nim skontaktować.
+            </p>
+        </section>
+    </div>
+</body>
+<script src="../js/script.js"></script>
+<script>
+    localStorage.setItem('lang', 'PL')
+</script>
+
+</html>
